@@ -25,7 +25,7 @@ SECRET_KEY = 'axx97&6%uwp!(*fg$q8s*%5honv!4i7#ce8o4#+m)e$9h)!#x0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['x22113886-travel.eu-north-1.elasticbeanstalk.com','tour.sa-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['x22113886-travel.eu-north-1.elasticbeanstalk.com','tour.sa-east-1.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
