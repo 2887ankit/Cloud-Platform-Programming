@@ -78,10 +78,11 @@ html,body{
 }
 
 .image{
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 400px;
   transform: translateX(250px)  translateY(200px);
   position: absolute;
+  padding-top: 80px;
 }
 #triangle-left {
   position: absolute;
@@ -262,5 +263,5 @@ transform: translateY(100px) translateX(-150px);
 }
 
 .copy{
-  margin-left: 30%;
+  margin-left: 81%;;
 }
