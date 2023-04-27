@@ -33,7 +33,7 @@
   <br><br>
 {% for i in Flights %}
 
-{% ifequal flavailability "available" %}
+
 <div class="container">
     <h1 class="hhh">BOOK</h1>
   <div class="ticket shadow-lg p-3 mb-5">
@@ -50,9 +50,8 @@
     </div>
   </div>
 </div>
-{% endifequal %}
-{% ifequal flavailability "unavailable" %}
-<div class="container">
+
+<!-- <div class="container">
     <h1 class="hhhh">BOOKED</h1>
   <div class="ticket shadow-lg p-3 mb-5">
     <div class="row bg2">
@@ -67,8 +66,8 @@
     <p class="eprice">{{pricef}}*</p>
     </div>
   </div>
-</div>
-{% endifequal %}
+</div> -->
+
 {% endfor %}
 <br><br><br><br>
 
