@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  pre_build:
+    commands:
+      - pip install --upgrade pip
+      - pip install -r requirements.txt pylint
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+      - unzip ./sonar-scanner-cli-4.7.0.2747-linux.zip
+      - export PATH=$PATH:./sonar-scanner-4.7.0.2747-linux/bin/
+  build:
+    commands:
+      - pylint $CODEBUILD_SRC_DIR/*.py || true
+      - sonar-scanner -Dsonar.login=04a9017eedecf2a9f41a65d02e0e52bb57d44648 -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=ankit2887 -Dsonar.organization=ankit2887 -DgeneratePom=true
+      - sleep 5
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=ankit2887 >result.json
+      - cat result.json
+      - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
