@@ -5,6 +5,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm,HotelForm,FlightForm,ChoiceForm,SeatForm,RoomForm,CityForm
 from .models import Flights,Hotels,Famous,BookFlight,BookHotel,BookPackage,City
+from discount_calculator import discount_calculator
 
 # Create your views here.
 
@@ -111,6 +112,9 @@ def Flightbook(request,flight_num=None,date=None):
                 c = BookFlight.objects.filter(flight=i.flight_num).filter(date=date)
                 d = BookPackage.objects.filter(flight=i.flight_num).filter(date=date)
                 price = seats*i.eprice
+                discount = 15
+                dis_price = discount_calculator.discount(price , discount)
+                print(dis_price)
                 seatrem = i.seats
             for j in c:
                 cs = cs + j.seat
@@ -122,7 +126,7 @@ def Flightbook(request,flight_num=None,date=None):
             else:
                 avail = "unavailable"
             a = {'availability':avail}
-            p = {'price':price}
+            p = {'price':dis_price}
             sb = {'seatsreq':seats}
             s = {'seatrem':seatrem}
             b = {'flight':flight}
