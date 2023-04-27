@@ -17,7 +17,7 @@ html,body{
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right,#9c27b0,#8ecdff);
+  background: linear-gradient(to right,#c4a107,#c4a102);
 
 }
 .title{
@@ -79,11 +79,10 @@ html,body{
 }
 
 .image{
-  width: 600px;
-  height: 400px;
-  transform: translateX(250px)  translateY(200px);
+  width: 34%;
   position: absolute;
-  padding-top: 80px;
+  top: 43%;
+  right: 43%;
 }
 #triangle-left {
   position: absolute;
