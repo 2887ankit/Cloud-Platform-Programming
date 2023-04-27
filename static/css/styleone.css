@@ -47,7 +47,7 @@
 .eprice{
   position: absolute;
   transform: translateX(650px) translateY(80px);
-  font-size: 100px;
+  font-size: 38px;
 }
 .t{
   font-family: 'Spicy Rice';
