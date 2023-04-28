@@ -88,11 +88,11 @@ html,body{
   position: absolute;
     width: 0;
     height: 0;
-    border-top: 700px solid #ccc;
+    border-top: 700px solid white;
     border-right: 550px solid transparent;
     transform: translateX(175px)  translateY(-200px);
-    border-bottom: 700px solid #ccc;
-    border-left: 500px solid #ccc;
+    border-bottom: 700px solid white;
+    border-left: 500px solid white;
   }
   .f-title{
     color: #512b58;
